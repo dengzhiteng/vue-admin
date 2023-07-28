@@ -2,7 +2,7 @@
   <div class="app-topnav">
     <div class="container">
       <ul>
-        <li><a href="#">请先登录</a></li>
+        <li> <router-link to="/login">请先登录</router-link> </li>
         <li><a href="#">帮助中心</a></li>
         <li><a href="#">关于我们</a></li>
       </ul>

@@ -37,3 +37,9 @@ import Home from "@/views/Home/index.vue";
 - 由 npm 改用 yarn,若要再次使用 npm 来管理项目,则删除 node_modules、yarn.lock 即可
 - 引用 iconfont 直接先使用在线的 ,便于后续添加新的 iconfont
 - vscode 要删除一个字母,再写一个字码才有 提示 ...怎么解决??
+
+## 20230727
+
+- 项目中使用 fetch
+- 环境变量
+- 多环境打包

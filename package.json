@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "serve": "vite --host",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -13,7 +14,8 @@
     "element-plus": "^2.2.28",
     "reset-css": "^5.0.2",
     "vue": "^3.2.47",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.2",
+    "whatwg-fetch": "^3.6.17"
   },
   "devDependencies": {
     "@types/node": "^20.3.2",

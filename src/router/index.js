@@ -1,19 +1,14 @@
 import { createRouter, createWebHashHistory } from "vue-router"
-import Login from "@/views/Login/index.vue"
-import ErrorPage from "@/views/ErrorPage/index.vue"
-import Home from "@/views/Home/index.vue"
-import Detail from "@/views/Detail/index.vue"
 import Layout from "@/views/Layout/index.vue"
 
-
-const baseRoutes = [
+const whiteRoutes = [
   {
     path: '/login',
-    component: Login,
+    component: () => import("@/views/Login/index.vue")
   },
   {
-    path: '/errorPage',
-    component: ErrorPage,
+    path: '/notFound',
+    component: () => import("@/views/ErrorPage/notFound.vue")
   },
 ]
 
@@ -21,26 +16,26 @@ const routes = [
   {
     path: '/',
     component: Layout,
+    alias: ['/index', '/home'],
     children: [
       {
         path: '/',
-        component: Home,
+        component: () => import("@/views/Home/index.vue")
       },
-
       {
         path: '/detail',
-        component: Detail,
+        component: () => import("@/views/Detail/index.vue")
       },
     ]
   },
   {
     path: "/:catchAll(.*)",
-    redirect: '/errorPage'
+    redirect: '/notFound'
   }
 ]
 
 export const router = createRouter({
   history: createWebHashHistory(),
-  routes: [...baseRoutes, ...routes]
+  routes: [...whiteRoutes, ...routes]
 })
 
