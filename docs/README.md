@@ -39,7 +39,18 @@ import Home from "@/views/Home/index.vue";
 - vscode 要删除一个字母,再写一个字码才有 提示 ...怎么解决??
 
 ## 20230727
-
 - 项目中使用 fetch
-- 环境变量
-- 多环境打包
+
+## 20230729 
+- 引入组件报错， VUE报错：Already included file name 解决办法
+1. 去掉 .vue 后缀 
+```
+  import NotFound from "./components/NotFound.vue" 
+  // ===》改成  
+  import NotFound from "./components/NotFound";
+```
+3. 更换组件名
+```
+
+
+-动态路由，嵌套路由，路由传参

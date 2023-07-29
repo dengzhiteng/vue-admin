@@ -7,8 +7,8 @@ const whiteRoutes = [
     component: () => import("@/views/Login/index.vue")
   },
   {
-    path: '/notFound',
-    component: () => import("@/views/ErrorPage/notFound.vue")
+    path: '/errorPage/:type',
+    component: () => import("@/views/ErrorPage/index.vue")
   },
 ]
 
@@ -30,7 +30,7 @@ const routes = [
   },
   {
     path: "/:catchAll(.*)",
-    redirect: '/notFound'
+    redirect: '/errorPage/404'
   }
 ]
 
