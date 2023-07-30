@@ -1,6 +1,7 @@
 import axios from 'axios'
+
 const httpInstance = axios.create({
-  baseURL: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',
+  baseURL: import.meta.env.VITE_APP_BASE_URL,
   timeout: 5000
 })
 

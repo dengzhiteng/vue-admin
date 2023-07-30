@@ -6,8 +6,8 @@ import { resolve } from "path"
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
 export default defineConfig({
+  base: "./",
   plugins: [
     vue(),
     AutoImport({
@@ -20,6 +20,13 @@ export default defineConfig({
       ],
     }),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/assets/style/variables.scss" as *;`
+      },
+    },
+  },
   server: {
     open: false,
     port: 8080,

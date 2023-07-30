@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  color: var(--text-color);
+  font-size: var(--font-size);
+  background-color:var(--main-color);
+  font-family:Arial,"微软雅黑","Microsoft Yahei";
+}
+
+#app {
+  user-select: none;
+  height: 100%;
+  overflow: auto;
+}
+
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  font-style: normal;
+}

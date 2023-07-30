@@ -1,6 +1,6 @@
 <script setup>
-import NotFound from "./components/NotFound1.vue";
-import NotAuth from "./components/NotAuth.vue";
+import NotFound from "@/views/ErrorPage/components/NotFound1.vue";
+import NotAuth from "@/views/ErrorPage/components/NotAuth.vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 const list = {

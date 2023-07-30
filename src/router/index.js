@@ -16,7 +16,7 @@ const routes = [
   {
     path: '/',
     component: Layout,
-    alias: ['/index', '/home'],
+    alias: '/index',
     children: [
       {
         path: '/',
@@ -24,10 +24,16 @@ const routes = [
       },
       {
         path: '/detail',
-        component: () => import("@/views/Detail/index.vue")
+        component: () => import("@/views/Detail/index.vue"),
+        alias: ['/xiangqing'],
       },
     ]
   },
+  {
+    path: '/demo',
+    component: () => import("@/views/RouterDemo/demo.vue"),
+  },
+
   {
     path: "/:catchAll(.*)",
     redirect: '/errorPage/404'
@@ -36,6 +42,9 @@ const routes = [
 
 export const router = createRouter({
   history: createWebHashHistory(),
-  routes: [...whiteRoutes, ...routes]
+  routes: [...whiteRoutes, ...routes],
+  scrollBehavior (to, from, savedPosition) {
+    return savedPosition ? savedPosition : { top: 0 }
+  }
 })
 

@@ -1,5 +1,5 @@
 import httpInstance from '@/utils/fetch'
-const baseURL = 'http://pcapi-xiaotuxian-front-devtest.itheima.net'
+const baseURL = import.meta.env.VITE_APP_BASE_URL
 
 // 获取banner
 export function getBannerAPI (params = {}) {
