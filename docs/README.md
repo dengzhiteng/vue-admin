@@ -67,3 +67,11 @@ import Home from "@/views/Home/index.vue";
 - 定义 css 变量
 - color-scheme 和夜间模式
 - [深色 ，浅色 两套主题](https://blog.csdn.net/duninet/article/details/104882324/)
+
+## 20230731
+
+- PS H:\前端\vue3> git pull
+
+fatal: unable to access 'https://github.com/dengzhiteng/vue3.git/': Failed to connect to github.com port 443: Timed out
+[参考资料](https://blog.csdn.net/weixin_44465434/article/details/124366982)
+端口号设置应该去查看自己电脑的代理端口
