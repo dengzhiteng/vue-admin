@@ -7,7 +7,6 @@ onMounted(async () => {
   const res = await getBannerAPI()
   bannerList.value = res.result
 })
-
 </script>
 
 <template>

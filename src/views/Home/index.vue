@@ -1,16 +1,16 @@
 <script setup >
-// import Banner from "./components/Banner.vue";
-import { getUsers } from '@/apis/home.js'
+import Banner from "./components/Banner.vue";
+import { getUserInfo } from '@/apis/home.js'
 import { onMounted } from 'vue'
 
 onMounted(async () => {
-  const res2 = await getUsers()
+  const res2 = await getUserInfo()
   console.log(res2);
 })
 
 </script>
 <template>
-  <!-- <Banner /> -->
+  <Banner />
   <div class="box"></div>
   <router-link to="/demo">记住滚动行为</router-link>
 </template>

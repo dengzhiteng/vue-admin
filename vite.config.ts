@@ -16,7 +16,7 @@ export default defineConfig({
     viteMockServe({
       supportTs: false,
       logger: false,
-      mockPath: "./mock/",
+      mockPath: "./src/mock/",
     }),
     AutoImport({
       resolvers: [ElementPlusResolver()],

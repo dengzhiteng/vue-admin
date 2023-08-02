@@ -10,6 +10,6 @@ export function getBannerAPI (params = {}) {
   })
 }
 
-export function getUsers () {
-  return axios.get('/api/user')
+export function getUserInfo () {
+  return axios.get('/api/userInfo')
 }

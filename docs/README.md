@@ -91,3 +91,12 @@ vite-plugin-mock3.0.0 版本运行报错
 解决办法：将 vite-plugin-mock 换成 2.9.6 版本
 
 task nvm node 版本管理
+
+problem git pull 403 time out ,尝试清除代理
+[参考文章](https://blog.csdn.net/qq_42777433/article/details/129026998)
+
+```
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+```
