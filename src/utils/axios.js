@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const httpInstance = axios.create({
-  baseURL: import.meta.env.VITE_APP_BASE_URL,
-  timeout: 5000
+  // baseURL: import.meta.env.VITE_APP_BASE_URL,
+  timeout: 6000
 })
 
 httpInstance.interceptors.request.use(config => {

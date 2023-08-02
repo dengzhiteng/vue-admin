@@ -1,13 +1,13 @@
-<script setup>
-import { getBannerAPI } from '@/apis/home-fetch'
+<script setup >
+import { getBannerAPI } from '@/apis/home.js'
 import { onMounted, ref } from 'vue'
 
 const bannerList = ref([])
-const getBanner = async () => {
+onMounted(async () => {
   const res = await getBannerAPI()
   bannerList.value = res.result
-}
-onMounted(() => getBanner())
+})
+
 </script>
 
 <template>

@@ -1,8 +1,8 @@
 <template>
-  <app-topnav />
-  <app-header />
+  <!-- <app-topnav /> -->
+  <!-- <app-header /> -->
   <router-view />
-  <app-footer />
+  <!-- <app-footer /> -->
 </template>
 
 <script setup>

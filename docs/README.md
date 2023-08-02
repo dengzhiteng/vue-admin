@@ -70,8 +70,24 @@ import Home from "@/views/Home/index.vue";
 
 ## 20230731
 
-- PS H:\前端\vue3> git pull
+- git pull,提示 Failed to connect to github.com port 443: Timed out
+  fatal: unable to access 'https://github.com/dengzhiteng/vue3.git/': Failed to connect to github.com port 443: Timed out
+  [参考资料](https://blog.csdn.net/weixin_44465434/article/details/124366982)
+  端口号设置应该去查看自己电脑的代理端口
 
-fatal: unable to access 'https://github.com/dengzhiteng/vue3.git/': Failed to connect to github.com port 443: Timed out
-[参考资料](https://blog.csdn.net/weixin_44465434/article/details/124366982)
-端口号设置应该去查看自己电脑的代理端口
+task 回到顶部
+
+## 20230801
+
+task 引入 ts,并改造现有代码
+
+## 20230802
+
+task 引入 autoprefixer,自动添加样式前缀
+task 引入 postcss-pxtorem
+task 引入 mock
+
+vite-plugin-mock3.0.0 版本运行报错
+解决办法：将 vite-plugin-mock 换成 2.9.6 版本
+
+task nvm node 版本管理
