@@ -1,24 +1,24 @@
 <script setup>
-import { toRef } from "vue";
-import { useRouter, useRoute } from "vue-router";
-const second = toRef(50);
-const router = useRouter();
-const route = useRoute();
+import { toRef } from "vue"
+import { useRouter, useRoute } from "vue-router"
+const second = toRef(50)
+const router = useRouter()
+const route = useRoute()
 const timeer = setInterval(() => {
   if (second.value == 0) {
-    clearInterval(timeer);
-    onBack();
+    clearInterval(timeer)
+    onBack()
   } else {
-    second.value--;
+    second.value--
   }
-}, 1000);
-const onBack = (path) => {
+}, 1000)
+const onBack = path => {
   if (path) {
-    router.replace({ path: path });
+    router.replace({ path: path })
   } else {
-    router.back();
+    router.back()
   }
-};
+}
 </script>
 
 <template>
@@ -26,15 +26,12 @@ const onBack = (path) => {
     <p class="title">403</p>
     <p class="title-desc">抱歉,您没有权限</p>
     <p class="btn">
-      <el-button size="large"
-                 @click="onBack()">立即返回 {{ second }}s</el-button>
-      <el-button type="primary"
-                 size="large"
-                 @click="onBack('/')">跳转到首页</el-button>
+      <el-button size="large" @click="onBack()">立即返回 {{ second }}s</el-button>
+      <el-button type="primary" size="large" @click="onBack('/')">跳转到首页</el-button>
     </p>
   </div>
 </template>
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .content {
   width: 300px;
   position: absolute;

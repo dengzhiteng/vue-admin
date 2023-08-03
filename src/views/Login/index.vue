@@ -49,9 +49,7 @@ const onSubmit = async () => {
           <el-input v-model="form.password" placeholder="请输入密码" type="password" clearable />
         </el-form-item>
         <el-form-item label="">
-          <el-button type="primary" class="el-button-block" size="large" @click="onSubmit(ruleFormRef)">
-            登录</el-button
-          >
+          <el-button type="primary" class="el-button-block" size="large" @click="onSubmit(ruleFormRef)">登录</el-button>
         </el-form-item>
       </el-form>
     </el-card>

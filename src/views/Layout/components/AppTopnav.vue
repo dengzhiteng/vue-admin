@@ -4,14 +4,14 @@
       <ul>
         <li><a href="#">帮助中心</a></li>
         <li><a href="#">关于我们</a></li>
-        <li> <router-link to="/login">请先登录</router-link> </li>
+        <li><router-link to="/login">请先登录</router-link></li>
         <li><a href="#">退出登录</a></li>
       </ul>
     </div>
   </div>
 </template>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .app-topnav {
   height: 50px;
   line-height: 50px;

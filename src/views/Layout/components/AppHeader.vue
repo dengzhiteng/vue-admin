@@ -24,47 +24,47 @@
   </div>
 </template>
 
-<style scoped lang='scss'>
-.app-header {
-  .container {
-    display: flex;
-    align-items: center;
-
-    .logo {
-      width: 200px;
-
-      a {
-        display: block;
-        height: 132px;
-        width: 100%;
-        text-indent: -9999px;
-        background: url('/src/assets/images/logo.png') no-repeat center 18px/contain;
-      }
-    }
-
-    ul {
-      flex: 1;
+<style scoped lang="scss">
+  .app-header {
+    .container {
       display: flex;
-      padding-left: 40px;
+      align-items: center;
 
-      li {
-        text-align: center;
-        width: 40px;
-        margin-right: 30px;
+      .logo {
+        width: 200px;
 
         a {
-          color: #333;
-          font-size: 16px;
-          line-height: 32px;
-          height: 32px;
-          display: inline-block;
+          display: block;
+          height: 132px;
+          width: 100%;
+          text-indent: -9999px;
+          background: url("/src/assets/images/logo.png") no-repeat center 18px / contain;
         }
       }
-    }
 
-    .app-header-search {
-      width: 200px;
+      ul {
+        flex: 1;
+        display: flex;
+        padding-left: 40px;
+
+        li {
+          text-align: center;
+          width: 40px;
+          margin-right: 30px;
+
+          a {
+            color: #333;
+            font-size: 16px;
+            line-height: 32px;
+            height: 32px;
+            display: inline-block;
+          }
+        }
+      }
+
+      .app-header-search {
+        width: 200px;
+      }
     }
   }
-}
 </style>

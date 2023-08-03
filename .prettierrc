@@ -1,21 +1,21 @@
 {
-  "printWidth": 120,
+  "printWidth": 150,
   "tabWidth": 2,
   "arrowParens": "avoid",
   "bracketSameLine": false,
   "bracketSpacing": true,
   "singleAttributePerLine": false,
   "embeddedLanguageFormatting": "auto",
-  "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
   "jsxSingleQuote": false,
+  "jsxBracketSameLine": false,
   "proseWrap": "preserve",
   "quoteProps": "preserve",
   "requirePragma": false,
   "semi": false,
   "singleQuote": false,
-  "trailingComma": "none",
-  "vueIndentScriptAndStyle": false,
-  "prettier.htmlWhitespaceSensitivity": "ignore",
-  "prettier.ignorePath": ".prettierignore"
+  "trailingComma": "es5",
+  "vueIndentScriptAndStyle": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "ignorePath": ".prettierignore"
 }

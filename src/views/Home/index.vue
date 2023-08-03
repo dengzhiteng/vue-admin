@@ -1,13 +1,12 @@
-<script setup >
-import Banner from "./components/Banner.vue";
-import { getUserInfo } from '@/apis/home.js'
-import { onMounted } from 'vue'
+<script setup>
+import Banner from "./components/Banner.vue"
+import { getUserInfo } from "@/apis/home.js"
+import { onMounted } from "vue"
 
 onMounted(async () => {
   const res2 = await getUserInfo()
-  console.log(res2);
+  console.log(res2)
 })
-
 </script>
 <template>
   <Banner />
@@ -19,4 +18,3 @@ onMounted(async () => {
   height: 1000px;
 }
 </style>
-
