@@ -18,7 +18,7 @@ const banner = Mock.mock({
 })
 
 // 商品分类
-const goodsCategory = Mock({
+const goodsCategory = Mock.mock({
   "list|4": [{
 
   }]

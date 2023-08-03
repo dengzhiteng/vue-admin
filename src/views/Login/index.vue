@@ -1,44 +1,39 @@
-<script  setup>
-import { ref, reactive } from "vue";
-import { useRouter } from 'vue-router'
+<script setup>
+import { ref, reactive } from "vue"
+import { useRouter } from "vue-router"
 const router = useRouter()
 
 const ruleFormRef = ref(null)
 const rules = reactive({
-  username: [
-    { required: 'true', message: '账户不能为空', trigger: 'blur' }
-  ],
-  password: [
-    { required: 'true', message: '密码不能为空', trigger: 'blur' }
-  ]
-});
+  username: [{ required: "true", message: "账户不能为空", trigger: "blur" }],
+  password: [{ required: "true", message: "密码不能为空", trigger: "blur" }]
+})
 const form = reactive({
   username: "",
-  password: "",
-});
+  password: ""
+})
 
 const onSubmit = async () => {
-  if (!ruleFormRef) return;
-  ruleFormRef.value.validate((valid) => {
+  if (!ruleFormRef) return
+  ruleFormRef.value.validate(valid => {
     if (valid) {
-      if (form.username == 'admin') {
+      if (form.username == "admin") {
         router.addRoute({
-          path: '/demo1',
-          name: 'demo1',
+          path: "/demo1",
+          name: "demo1",
           component: () => import("../RouterDemo/demo1.vue")
         })
       } else {
-        router.removeRoute('demo1')
+        router.removeRoute("demo1")
       }
       console.log(router.getRoutes())
-      router.replace('/')
+      router.replace("/")
     } else {
-      return false;
+      return false
     }
-  });
-};
+  })
+}
 </script>
-
 
 <template>
   <div class="login-container">
@@ -54,7 +49,9 @@ const onSubmit = async () => {
           <el-input v-model="form.password" placeholder="请输入密码" type="password" clearable />
         </el-form-item>
         <el-form-item label="">
-          <el-button type="primary" class="el-button-block" size="large" @click="onSubmit(ruleFormRef)">登录</el-button>
+          <el-button type="primary" class="el-button-block" size="large" @click="onSubmit(ruleFormRef)">
+            登录</el-button
+          >
         </el-form-item>
       </el-form>
     </el-card>
@@ -63,7 +60,7 @@ const onSubmit = async () => {
 
 <style scoped lang="scss">
 .login-container {
-  background-image: url('@/assets/images/login-bg.webp');
+  background-image: url("@/assets/images/login-bg.webp");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -71,18 +68,14 @@ const onSubmit = async () => {
   align-items: center;
   justify-content: center;
 }
-
 .box-card {
   width: 400px;
 }
-
 .card-header {
   text-align: center;
 }
-
 .login-btn-box {
   justify-content: center;
-
   .login-btn {
     width: 100%;
   }

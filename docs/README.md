@@ -4,9 +4,7 @@
 
 ## 20230629
 
-- [node 升级](https://blog.csdn.net/m0_56745001/article/details/129381751)
-  安装 element-plus 报一下错误： Unsupported URL Type: npm:@sxzz/popperjs-es@^2.11.7
-  然后上网找原因：由于当前的 npm(v6.14.8)版本较低，要升级 npm，
+- [node 升级](https://blog.csdn.net/m0_56745001/article/details/129381751) 安装 element-plus 报一下错误： Unsupported URL Type: npm:@sxzz/popperjs-es@^2.11.7 然后上网找原因：由于当前的 npm(v6.14.8)版本较低，要升级 npm，
 
 ```
 npm install -g npm
@@ -25,11 +23,11 @@ npm install -g npm
 
 ```js
 // 错误写法
-import Home from "@/views/Home";
+import Home from "@/views/Home"
 // 一直提示,[vite] Internal server error: EISDIR: illegal operation on a directory, read
 
 // 正确写法
-import Home from "@/views/Home/index.vue";
+import Home from "@/views/Home/index.vue"
 ```
 
 ## 20230726
@@ -70,10 +68,7 @@ import Home from "@/views/Home/index.vue";
 
 ## 20230731
 
-- git pull,提示 Failed to connect to github.com port 443: Timed out
-  fatal: unable to access 'https://github.com/dengzhiteng/vue3.git/': Failed to connect to github.com port 443: Timed out
-  [参考资料](https://blog.csdn.net/weixin_44465434/article/details/124366982)
-  端口号设置应该去查看自己电脑的代理端口
+- git pull,提示 Failed to connect to github.com port 443: Timed out fatal: unable to access 'https://github.com/dengzhiteng/vue3.git/': Failed to connect to github.com port 443: Timed out [参考资料](https://blog.csdn.net/weixin_44465434/article/details/124366982) 端口号设置应该去查看自己电脑的代理端口
 
 task 回到顶部
 
@@ -83,20 +78,21 @@ task 引入 ts,并改造现有代码
 
 ## 20230802
 
-task 引入 autoprefixer,自动添加样式前缀
-task 引入 postcss-pxtorem
-task 引入 mock
+task 引入 autoprefixer,自动添加样式前缀 task 引入 postcss-pxtorem task 引入 mock
 
-vite-plugin-mock3.0.0 版本运行报错
-解决办法：将 vite-plugin-mock 换成 2.9.6 版本
+vite-plugin-mock3.0.0 版本运行报错解决办法：将 vite-plugin-mock 换成 2.9.6 版本
 
 task nvm node 版本管理
 
-problem git pull 403 time out ,尝试清除代理
-[参考文章](https://blog.csdn.net/qq_42777433/article/details/129026998)
+problem git pull 403 time out ,尝试清除代理 [参考文章](https://blog.csdn.net/qq_42777433/article/details/129026998)
 
 ```
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 
 ```
+
+## 20230803
+
+task 引入 prettier
+fix html 比较短，却也换行，通过设置 printWidth 属性来设置每一行的字数 [参考文章](https://www.cnblogs.com/mesmerize/p/15993937.html)
