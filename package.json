@@ -22,15 +22,16 @@
     "@vitejs/plugin-vue": "^4.1.0",
     "autoprefixer": "^10.4.14",
     "mockjs": "^1.1.0",
-    "vite-plugin-mock": "^2.9.6",
     "postcss": "^8.4.27",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-modules": "^6.0.0",
+    "prettier": "^3.0.1",
     "sass": "^1.63.6",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",
     "unplugin-auto-import": "^0.16.4",
     "unplugin-vue-components": "^0.25.1",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "vite-plugin-mock": "^2.9.6"
   }
 }
