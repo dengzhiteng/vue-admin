@@ -29,16 +29,14 @@
     .container {
       display: flex;
       align-items: center;
-
       .logo {
         width: 200px;
-
         a {
           display: block;
           height: 132px;
           width: 100%;
           text-indent: -9999px;
-          background: url("/src/assets/images/logo.png") no-repeat center 18px / contain;
+          // background: url("/src/assets/images/logo.png") no-repeat center 18px / contain;
         }
       }
 
@@ -46,12 +44,10 @@
         flex: 1;
         display: flex;
         padding-left: 40px;
-
         li {
           text-align: center;
           width: 40px;
           margin-right: 30px;
-
           a {
             color: #333;
             font-size: 16px;
@@ -61,7 +57,6 @@
           }
         }
       }
-
       .app-header-search {
         width: 200px;
       }

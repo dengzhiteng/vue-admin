@@ -27,13 +27,16 @@ const routes = [
         component: () => import("@/views/Detail/index.vue"),
         alias: ['/xiangqing'],
       },
+      {
+        path: '/goodsList',
+        component: () => import("@/views/GoodsList/index.vue"),
+      },
     ]
   },
   {
     path: '/demo',
     component: () => import("@/views/RouterDemo/demo.vue"),
   },
-
   {
     path: "/:catchAll(.*)",
     redirect: '/errorPage/404'

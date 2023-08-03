@@ -96,3 +96,7 @@ git config --global --unset https.proxy
 
 task 引入 prettier
 fix html 比较短，却也换行，通过设置 printWidth 属性来设置每一行的字数 [参考文章](https://www.cnblogs.com/mesmerize/p/15993937.html)
+
+## 20230804
+
+task 前端导出
