@@ -1,4 +1,5 @@
 {
+  "parser": "typescript",
   "printWidth": 150,
   "tabWidth": 2,
   "arrowParens": "avoid",
@@ -13,9 +14,6 @@
   "quoteProps": "preserve",
   "requirePragma": false,
   "semi": false,
-  "singleQuote": false,
-  "trailingComma": "es5",
-  "vueIndentScriptAndStyle": true,
-  "htmlWhitespaceSensitivity": "ignore",
-  "ignorePath": ".prettierignore"
+  "trailingComma": "none",
+  "vueIndentScriptAndStyle": true
 }

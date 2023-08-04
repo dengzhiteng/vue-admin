@@ -5,16 +5,8 @@
         <a href="#">小兔鲜</a>
       </h1>
       <ul class="app-header-nav">
-        <li><a href="#">首页</a></li>
-        <li><a href="#">居家</a></li>
-        <li><a href="#">美食</a></li>
-        <li><a href="#">服饰</a></li>
-        <li><a href="#">母婴</a></li>
-        <li><a href="#">个护</a></li>
-        <li><a href="#">严选</a></li>
-        <li><a href="#">数码</a></li>
-        <li><a href="#">运动</a></li>
-        <li><a href="#">杂项</a></li>
+        <li><router-link to="/">首页</router-link></li>
+        <li><router-link to="/goodsList">前端导出</router-link></li>
       </ul>
       <div class="app-header-search">搜一搜</div>
       <div class="cart">
@@ -46,7 +38,6 @@
         padding-left: 40px;
         li {
           text-align: center;
-          width: 40px;
           margin-right: 30px;
           a {
             color: #333;

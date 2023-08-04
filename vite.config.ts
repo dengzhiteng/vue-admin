@@ -25,7 +25,7 @@ export default defineConfig({
       resolvers: [
         // 1. 配置elementPlus采用sass样式配色系统
         ElementPlusResolver({ importStyle: "sass" })
-      ],
+      ]
     }),
   ],
   css: {
@@ -46,7 +46,7 @@ export default defineConfig({
             '> 1%'
           ],
           grid: true
-        }),
+        })
       ]
     }
   },

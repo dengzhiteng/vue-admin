@@ -3,51 +3,68 @@ import Layout from "@/views/Layout/index.vue"
 
 const whiteRoutes = [
   {
-    path: '/login',
+    path: "/login",
     component: () => import("@/views/Login/index.vue")
   },
   {
-    path: '/errorPage/:type',
+    path: "/errorPage/:type",
     component: () => import("@/views/ErrorPage/index.vue")
-  },
+  }
 ]
 
 const routes = [
   {
-    path: '/',
+    path: "/",
     component: Layout,
-    alias: '/index',
+    alias: "/index",
+    meta: {
+      title: "首页"
+    },
     children: [
       {
-        path: '/',
-        component: () => import("@/views/Home/index.vue")
+        path: "/",
+        component: () => import("@/views/Home/index.vue"),
+        meta: {
+          title: "首页"
+        }
       },
       {
-        path: '/detail',
+        path: "/detail",
         component: () => import("@/views/Detail/index.vue"),
-        alias: ['/xiangqing'],
+        alias: ["/xiangqing"],
+        meta: {
+          title: "商品详情"
+        }
       },
       {
-        path: '/goodsList',
+        path: "/goodsList",
         component: () => import("@/views/GoodsList/index.vue"),
-      },
+        meta: {
+          title: "商品列表"
+        }
+      }
     ]
   },
   {
-    path: '/demo',
+    path: "/demo",
     component: () => import("@/views/RouterDemo/demo.vue"),
+    meta: {
+      title: "demo"
+    }
   },
   {
     path: "/:catchAll(.*)",
-    redirect: '/errorPage/404'
+    redirect: "/errorPage/404",
+    meta: {
+      title: "404"
+    }
   }
 ]
 
 export const router = createRouter({
   history: createWebHashHistory(),
   routes: [...whiteRoutes, ...routes],
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     return savedPosition ? savedPosition : { top: 0 }
   }
 })
-

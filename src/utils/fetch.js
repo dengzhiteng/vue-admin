@@ -1,4 +1,4 @@
-import 'whatwg-fetch'
+import "whatwg-fetch"
 
 export default {
   /**
@@ -8,34 +8,34 @@ export default {
    * @param headers
    * @returns {Promise}
    */
-  get (url, params, headers) {
+  get(url, params, headers) {
     if (params) {
-      let paramsArray = [];
-      //encodeURIComponent
-      Object.keys(params).forEach(key => paramsArray.push(key + '=' + params[key]))
+      let paramsArray = []
+      // encodeURIComponent
+      Object.keys(params).forEach(key => paramsArray.push(key + "=" + params[key]))
       if (url.search(/\?/) === -1) {
-        url += '?' + paramsArray.join('&')
+        url += "?" + paramsArray.join("&")
       } else {
-        url += '&' + paramsArray.join('&')
+        url += "&" + paramsArray.join("&")
       }
     }
     return new Promise(function (resolve, reject) {
       fetch(url, {
-        method: 'GET',
-        headers: headers,
+        method: "GET",
+        headers: headers
       })
-        .then((response) => {
+        .then(response => {
           if (response.ok) {
-            return response.json();
+            return response.json()
           } else {
             reject({ status: response.status })
           }
         })
-        .then((response) => {
-          resolve(response);
+        .then(response => {
+          resolve(response)
         })
-        .catch((err) => {
-          reject({ status: -1 });
+        .catch(err => {
+          reject({ status: -1 })
         })
     })
   },
@@ -46,25 +46,25 @@ export default {
    * @param headers
    * @returns {Promise}
    */
-  post (url, formData, headers) {
+  post(url, formData, headers) {
     return new Promise(function (resolve, reject) {
       fetch(url, {
-        method: 'POST',
+        method: "POST",
         headers: headers,
-        body: formData,
+        body: formData
       })
-        .then((response) => {
+        .then(response => {
           if (response.ok) {
-            return response.json();
+            return response.json()
           } else {
             reject({ status: response.status })
           }
         })
-        .then((response) => {
-          resolve(response);
+        .then(response => {
+          resolve(response)
         })
-        .catch((err) => {
-          reject({ status: -1 });
+        .catch(err => {
+          reject({ status: -1 })
         })
     })
   }
