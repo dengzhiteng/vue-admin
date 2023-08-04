@@ -1,19 +1,11 @@
 {
-  "parser": "typescript",
+  "semi": false,
+  "singleQuote": false,
   "printWidth": 150,
   "tabWidth": 2,
-  "arrowParens": "avoid",
-  "bracketSameLine": false,
-  "bracketSpacing": true,
-  "singleAttributePerLine": false,
-  "embeddedLanguageFormatting": "auto",
-  "insertPragma": false,
-  "jsxSingleQuote": false,
-  "jsxBracketSameLine": false,
-  "proseWrap": "preserve",
-  "quoteProps": "preserve",
-  "requirePragma": false,
-  "semi": false,
   "trailingComma": "none",
-  "vueIndentScriptAndStyle": true
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "singleAttributePerLine": false,
+  "embeddedLanguageFormatting": "auto"
 }
