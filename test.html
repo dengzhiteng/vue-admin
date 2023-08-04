@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<title>11</title>
+
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .loading-button {
+      position: relative;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .loading-button:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .loading-button.loading:after {
+      opacity: 1;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      border-top: 2px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .loading-button.loading .loading-spinner {
+      display: block;
+    }
+
+    .loading-button:not(.loading) .loading-spinner {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="loading-button loading"><span class="loading-spinner"></span> 是事实</button>
+</body>
+
+</html>

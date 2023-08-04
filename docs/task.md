@@ -99,8 +99,10 @@ fix html 比较短，却也换行，通过设置 printWidth 属性来设置每�
 
 ## 20230804
 
-task 前端导出
+task 引入[xlsx.js](https://github.com/rockboom/SheetJS-docs-zh-CN) 前端导出
 
+## 20230805
 
-## 20230805 
 task 引入eslint
+task 全局指令,防抖与节流
+task 取消请求
