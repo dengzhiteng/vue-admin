@@ -1,36 +1,34 @@
-<script setup>
+<script setup lang="ts">
 import { ref, reactive } from "vue"
 import { useRouter } from "vue-router"
-const router = useRouter()
+import type { FormInstance, FormRules } from "element-plus"
+import { logoinRuleForm } from "@/type"
 
-const ruleFormRef = ref(null)
-const rules = reactive({
-  username: [{ required: "true", message: "账户不能为空", trigger: "blur" }],
-  password: [{ required: "true", message: "密码不能为空", trigger: "blur" }]
+const router = useRouter()
+const ruleFormRef = ref<FormInstance>()
+const rules = reactive<FormRules<typeof form>>({
+  username: [{ required: true, message: "账号不能为空", trigger: "blur" }],
+  password: [{ required: true, message: "密码不能为空", trigger: "blur" }]
 })
-const form = reactive({
+const form = reactive<logoinRuleForm>({
   username: "",
   password: ""
 })
 
-const onSubmit = async () => {
-  if (!ruleFormRef) return
-  ruleFormRef.value.validate(valid => {
-    if (valid) {
-      if (form.username == "admin") {
-        router.addRoute({
-          path: "/demo1",
-          name: "demo1",
-          component: () => import("../RouterDemo/demo1.vue")
-        })
-      } else {
-        router.removeRoute("demo1")
-      }
-      console.log(router.getRoutes())
-      router.replace("/")
+const onSubmit = (formEl: FormInstance | undefined) => {
+  if (!formEl) return false
+  formEl.validate(valid => {
+    if (!valid) return false
+    if (form.username == "admin") {
+      router.addRoute({
+        path: "/demo1",
+        name: "demo1",
+        component: () => import("../RouterDemo/demo1.vue")
+      })
     } else {
-      return false
+      router.removeRoute("demo1")
     }
+    router.replace("/")
   })
 }
 </script>
@@ -39,7 +37,7 @@ const onSubmit = async () => {
   <div class="login-container">
     <el-card class="box-card">
       <template #header>
-        <div class="card-header">小兔鲜商城系统</div>
+        <div class="card-header">Vue3+Ts+Vite</div>
       </template>
       <el-form :model="form" ref="ruleFormRef" :rules="rules" size="large" label-width="50px">
         <el-form-item label="账号" prop="username">

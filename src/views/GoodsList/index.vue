@@ -1,6 +1,5 @@
-<script setup>
+<script setup lang="ts">
 import * as XLSX from "xlsx"
-console.log(import.meta.env)
 const tableHeader = {
   name: "姓名",
   sex: "性别",
@@ -23,6 +22,11 @@ const tableData = [
     age: 3
   }
 ]
+
+const html = `<span class="red">sfsfsdf</span>`
+import { ref } from "vue"
+const message = ref("")
+
 function exportExcle() {
   let workbook = XLSX.utils.book_new()
   var worksheet = XLSX.utils.json_to_sheet([tableHeader, ...tableData])
@@ -40,6 +44,14 @@ function exportExcle() {
       <el-table-column prop="age" label="年龄" />
     </el-table>
   </el-row>
+
+  <p v-html="html"></p>
+  <input v-model="message" type="text" />
+  <div>{{ message }}</div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+:deep(.red) {
+  color: red;
+}
+</style>

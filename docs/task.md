@@ -106,3 +106,17 @@ task 引入[xlsx.js](https://github.com/rockboom/SheetJS-docs-zh-CN) 前端导�
 task 引入eslint
 task 全局指令,防抖与节流
 task 取消请求
+
+## 20230808
+
+task 使用 ts
+
+- scoped 的样式不会应用在 v-html 内部,解决方法:
+
+```css
+:deep(.red) {
+  color: red;
+}
+```
+
+- 环境变量在html 文件中的使用

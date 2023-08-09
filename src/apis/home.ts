@@ -1,4 +1,4 @@
-import axios from "@/utils/axios"
+import axios from "@/utils/axios.ts"
 
 // 首页轮播
 export function getBannerAPI(params = {}) {

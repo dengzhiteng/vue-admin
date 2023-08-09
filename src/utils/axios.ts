@@ -1,7 +1,14 @@
-import axios from "axios"
+import axios, { Axios, AxiosResponse, AxiosRequestConfig } from "axios"
+
+declare module "axios" {
+  interface AxiosResponse<T = any> {
+    result: null
+  }
+  export function create(config?: AxiosRequestConfig): AxiosInstance
+}
 
 const httpInstance = axios.create({
-  // baseURL: import.meta.env.VITE_APP_BASE_URL,
+  baseURL: import.meta.env.VITE_APP_BASE_URL,
   timeout: 6000
 })
 

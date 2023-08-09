@@ -1,11 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import Banner from "./components/Banner.vue"
-import { getUserInfo } from "@/apis/home.js"
+import { getUserInfo } from "@/apis/home"
 import { onMounted } from "vue"
 
 onMounted(async () => {
-  const res2 = await getUserInfo()
-  console.log(res2)
+  const res = await getUserInfo()
 })
 </script>
 <template>
