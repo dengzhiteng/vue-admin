@@ -7,8 +7,7 @@
         <a href="#">小兔鲜</a>
       </h1>
       <ul class="app-header-nav">
-        <li><router-link to="/">首页</router-link></li>
-        <li><router-link to="/goodsList">前端导出</router-link></li>
+        <li><router-link to="/goodsList">列表数据</router-link></li>
       </ul>
       <div class="app-header-search">搜一搜</div>
       <div class="cart">
@@ -30,7 +29,7 @@
         height: 132px;
         width: 100%;
         text-indent: -9999px;
-        // background: url("/src/assets/images/logo.png") no-repeat center 18px / contain;
+        //  background: url("/src/assets/images/logo.png") no-repeat center 18px / contain;
       }
     }
 

@@ -2,7 +2,7 @@
 import { ref, reactive } from "vue"
 import { useRouter } from "vue-router"
 import type { FormInstance, FormRules } from "element-plus"
-import { logoinRuleForm } from "@/type"
+import { Ilogoin } from "@/type"
 
 const router = useRouter()
 const ruleFormRef = ref<FormInstance>()
@@ -10,7 +10,7 @@ const rules = reactive<FormRules<typeof form>>({
   username: [{ required: true, message: "账号不能为空", trigger: "blur" }],
   password: [{ required: true, message: "密码不能为空", trigger: "blur" }]
 })
-const form = reactive<logoinRuleForm>({
+const form = reactive<Ilogoin>({
   username: "",
   password: ""
 })

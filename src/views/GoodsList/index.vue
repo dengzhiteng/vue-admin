@@ -1,53 +1,27 @@
 <script setup lang="ts">
-import * as XLSX from "xlsx"
-const tableHeader = {
-  name: "姓名",
-  sex: "性别",
-  age: "年龄"
-}
-const tableData = [
+import { IgoodsList } from "@/type"
+const tableData: IgoodsList[] = [
   {
-    name: "张三",
-    sex: "男",
-    age: 1
-  },
-  {
-    name: "张三",
-    sex: "男",
-    age: 3
-  },
-  {
-    name: "嘉靖",
-    sex: "男",
-    age: 3
+    id: "123",
+    goodsName: "ddd",
+    price: 10,
+    stock: 2,
+    desc: "123"
   }
 ]
-
-const html = `<span class="red">sfsfsdf</span>`
-import { ref } from "vue"
-const message = ref("")
-
-function exportExcle() {
-  let workbook = XLSX.utils.book_new()
-  var worksheet = XLSX.utils.json_to_sheet([tableHeader, ...tableData])
-  XLSX.utils.book_append_sheet(workbook, worksheet, "sheet")
-  XLSX.writeFile(workbook, "./表格.xlsx")
-}
 </script>
 
 <template>
+  <p>商品列表</p>
   <el-row class="goodList">
-    <el-button type="primary" @click="exportExcle">导出</el-button>
     <el-table :data="tableData" stripe>
-      <el-table-column prop="name" label="姓名" />
-      <el-table-column prop="sex" label="性别" />
-      <el-table-column prop="age" label="年龄" />
+      <el-table-column prop="goodsName" label="商品名称" />
+      <el-table-column prop="price" label="价格" />
+      <el-table-column prop="stock" label="库存" />
+      <el-table-column prop="desc" label="描述" />
+      <el-table-column prop="img" label="图片" />
     </el-table>
   </el-row>
-
-  <p v-html="html"></p>
-  <input v-model="message" type="text" />
-  <div>{{ message }}</div>
 </template>
 
 <style scoped lang="scss">

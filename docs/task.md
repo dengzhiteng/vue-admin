@@ -120,3 +120,9 @@ task 使用 ts
 ```
 
 - 环境变量在html 文件中的使用
+
+## 20230810
+
+task 使用piana
+task 重新封装axios
+task npm 与 node 关系
