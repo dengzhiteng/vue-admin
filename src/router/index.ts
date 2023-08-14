@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router"
+import {createRouter, createWebHashHistory} from "vue-router"
 import Layout from "@/views/Layout/index.vue"
 
 const whiteRoutes = [
@@ -46,10 +46,17 @@ const routes = [
     ]
   },
   {
-    path: "/demo",
+    path: "/RouterDemo",
     component: () => import("@/views/RouterDemo/demo.vue"),
     meta: {
-      title: "demo"
+      title: "RouterDemo"
+    }
+  },
+  {
+    path: "/VueDemo",
+    component: () => import("@/views/VueDemo/index.vue"),
+    meta: {
+      title: "VueDemo"
     }
   },
   {
@@ -65,6 +72,6 @@ export const router = createRouter({
   history: createWebHashHistory(),
   routes: [...whiteRoutes, ...routes],
   scrollBehavior(to, from, savedPosition) {
-    return savedPosition ? savedPosition : { top: 0 }
+    return savedPosition ? savedPosition : {top: 0}
   }
 })

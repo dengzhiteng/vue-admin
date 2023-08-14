@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import Banner from "./components/Banner.vue"
-import { onMounted } from "vue"
-import { storeToRefs } from "pinia"
 onMounted(async () => {})
 </script>
 <template>

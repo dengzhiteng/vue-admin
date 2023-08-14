@@ -32,7 +32,7 @@
     "sass": "^1.63.6",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",
-    "unplugin-auto-import": "^0.16.4",
+    "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.1",
     "vite": "^4.3.9",
     "vite-plugin-html": "^3.2.0",

@@ -9,6 +9,7 @@ const tableData: IgoodsList[] = [
     desc: "123"
   }
 ]
+
 </script>
 
 <template>

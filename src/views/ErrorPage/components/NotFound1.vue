@@ -1,5 +1,4 @@
 <script setup>
-import { toRef } from "vue"
 import { useRouter, useRoute } from "vue-router"
 const second = toRef(50)
 const router = useRouter()

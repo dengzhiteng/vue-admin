@@ -126,3 +126,19 @@ task 使用 ts
 task 使用piana
 task 重新封装axios
 task npm 与 node 关系
+
+## 20230814
+
+- fixbug 热更新失效
+
+路由定义大小写必须和定义的时候一致,文件写的是VueDemo ,路由定义却写成了vueDemo,导致了热更新失效
+
+```js
+{
+  path: "/VueDemo",
+  component: () => import("@/views/vueDemo/index.vue"),
+  meta: {
+    title: "VueDemo"
+  }
+}
+```
