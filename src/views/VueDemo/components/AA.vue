@@ -1,6 +1,10 @@
 <script lang="ts" setup>
+defineProps({
+  title: String
+})
 const isShow = ref(false)
 const message: string = "a,b,c,d"
+const fatherData = inject("fatherData")
 
 type Cls = {
   other: boolean
@@ -12,9 +16,6 @@ const flag: Cls = {
 }
 const flagClass = ref(true)
 const userName = ref("v-model")
-console.log("flagClass", flagClass)
-console.log("isRef", isRef(flagClass))
-
 // shallowRef 只能响应浅层
 const userName1 = shallowRef("shallowRef")
 const changeUserName1 = () => {
@@ -62,6 +63,8 @@ const copyPerson = readonly(person)
 // copyPerson.push(1) //只读 ,所以报错
 </script>
 <template>
+  <h1>{{ title }}</h1>
+  <p>来自父组件提供给后代组件的值 {{ fatherData }}</p>
   <!-- v-if v-show -->
   <el-row>
     <el-button @click="isShow = !isShow">切换显示</el-button>

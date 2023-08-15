@@ -10,13 +10,8 @@ const userInfo = Mock.mock({
   address: "@county(true)"
 })
 
-
 // 路由
-const routerList = Mock.mock({
-  
-})
-
-
+const routerList = Mock.mock({})
 export default [
   {
     url: "/api/userInfo",
@@ -29,4 +24,3 @@ export default [
     }
   }
 ]
-

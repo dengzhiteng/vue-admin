@@ -9,7 +9,6 @@ const banner = Mock.mock({
     }
   ]
 })
-
 const apiData = [
   {
     url: "/home/banner",
