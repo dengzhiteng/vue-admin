@@ -149,3 +149,12 @@ task npm 与 node 关系
 - 原生绘制搜索,模百度搜索,节流 用上
 - 插槽 v-slot: 指令可以简写为 #
 - 骨架屏
+
+```js
+// 打印代码运行时长
+console.time("time1")
+for (let i = 0; i < 50000; i++) {}
+console.timeEnd("time1")
+```
+
+## 20230818
