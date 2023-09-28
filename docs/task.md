@@ -1,5 +1,4 @@
 # Vue 3 + Vite +ts 学习项目
-
 - 在 jsconfig.json 中设置路径提示,在 viete.config.js 中设置别名
 
 ## 20230629
@@ -53,7 +52,6 @@ import Home from "@/views/Home/index.vue"
 - 登录页面
 
 ```
-
 ## 20230730
 
 - 动态路由
@@ -70,6 +68,17 @@ import Home from "@/views/Home/index.vue"
 
 - git pull,提示 Failed to connect to github.com port 443: Timed out fatal: unable to access 'https://github.com/dengzhiteng/vue3.git/': Failed to connect to github.com port 443: Timed out [参考资料](https://blog.csdn.net/weixin_44465434/article/details/124366982) 端口号设置应该去查看自己电脑的代理端口
 
+problem git pull 403 time out ,尝试清除代理 [参考文章](https://blog.csdn.net/qq_42777433/article/details/129026998)
+
+```
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+```
+
+- 关闭 vpn 翻墙工具
+- [刷新dns](https://blog.csdn.net/m0_69087087/article/details/128838186)
+
 task 回到顶部
 
 ## 20230801
@@ -83,14 +92,6 @@ task 引入 autoprefixer,自动添加样式前缀 task 引入 postcss-pxtorem ta
 vite-plugin-mock3.0.0 版本运行报错解决办法：将 vite-plugin-mock 换成 2.9.6 版本
 
 task nvm node 版本管理
-
-problem git pull 403 time out ,尝试清除代理 [参考文章](https://blog.csdn.net/qq_42777433/article/details/129026998)
-
-```
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-
-```
 
 ## 20230803
 

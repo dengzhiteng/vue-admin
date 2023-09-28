@@ -1,16 +1,6 @@
-import axios from "@/utils/axios"
-
-// 首页轮播
-export function getBanner() {
-  return axios.get("/home/banner")
-}
+import request from "@/utils/axios"
 
 // 个人信息
 export function getUserInfo() {
-  return axios.get("/api/userInfo")
-}
-
-// 商品列表
-export function getGoodsList() {
-  return axios.get("/api/goodsList")
+  return request.get("/api/userInfo")
 }

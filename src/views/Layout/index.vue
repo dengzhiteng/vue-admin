@@ -1,7 +1,6 @@
-<script setup>
+<script setup lang="ts">
 import AppTopnav from "./components/AppTopnav.vue"
 import AppMenu from "./components/AppMenu.vue"
-import AppFooter from "./components/AppFooter.vue"
 </script>
 
 <template>
@@ -22,6 +21,7 @@ import AppFooter from "./components/AppFooter.vue"
 <style scoped lang="scss">
 .content {
   min-height: calc(100vh - 50px - 23px);
+  background-color: #f1f1f1;
 }
 </style>
 

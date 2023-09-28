@@ -6,9 +6,7 @@ import "reset-css"
 import "animate.css"
 import "./assets/style/main.scss"
 import "./assets/style/elment.scss"
-import "./mock/index.js"
-import {useFocus, useDebounce, uesThrottle} from "./directives/index"
-
+import { useFocus, useDebounce, uesThrottle } from "./directives/index"
 const app = createApp(App)
 const directives: any = {
   focus: useFocus,

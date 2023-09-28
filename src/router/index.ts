@@ -1,16 +1,33 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 import Layout from "@/views/Layout/index.vue"
 
-const whiteRoutes = [
-  {
-    path: "/login",
-    component: () => import("@/views/Login/index.vue")
-  },
-  {
-    path: "/errorPage/:type",
-    component: () => import("@/views/ErrorPage/index.vue")
-  }
-]
+const whiteRoutes =
+  [
+    {
+      path: "/login",
+      component: () => import("@/views/Login/index.vue")
+    },
+    {
+      path: "/errorPage/:type",
+      component: () => import("@/views/ErrorPage/index.vue")
+    }
+  ] 
+  // 仪表盘
+  // dashboard / workbench
+  // dashboard/analysis
+
+// 组件
+// 页面
+// 权限控制
+// 系统管理
+// 编辑器
+// 图标
+// 多级菜单
+// 示例
+// 关于
+
+
+
 
 const routes = [
   {
@@ -28,36 +45,7 @@ const routes = [
           title: "首页"
         }
       },
-      {
-        path: "/detail",
-        component: () => import("@/views/Detail/index.vue"),
-        alias: ["/xiangqing"],
-        meta: {
-          title: "商品详情"
-        }
-      },
-      {
-        path: "/goodsList",
-        component: () => import("@/views/GoodsList/index.vue"),
-        meta: {
-          title: "商品列表"
-        }
-      }
     ]
-  },
-  {
-    path: "/RouterDemo",
-    component: () => import("@/views/RouterDemo/demo.vue"),
-    meta: {
-      title: "RouterDemo"
-    }
-  },
-  {
-    path: "/VueDemo",
-    component: () => import("@/views/VueDemo/index.vue"),
-    meta: {
-      title: "VueDemo"
-    }
   },
   {
     path: "/:catchAll(.*)",

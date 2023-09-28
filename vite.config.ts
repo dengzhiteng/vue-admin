@@ -2,7 +2,6 @@ import {defineConfig, loadEnv} from "vite"
 import vue from "@vitejs/plugin-vue"
 import {resolve} from "path"
 import autoprefixer from "autoprefixer"
-import {viteMockServe} from "vite-plugin-mock"
 import {createHtmlPlugin} from "vite-plugin-html"
 
 // elementPlus按需导入
@@ -19,11 +18,6 @@ export default () =>
     base: "./",
     plugins: [
       vue(),
-      viteMockServe({
-        supportTs: false,
-        logger: false,
-        mockPath: "./src/mock/"
-      }),
       AutoImport({
         resolvers: [ElementPlusResolver()],
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等

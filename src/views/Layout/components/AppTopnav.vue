@@ -1,13 +1,10 @@
 <template>
   <div class="app-topnav">
-    <div class="container">
       <ul>
         <li><a href="#">帮助中心</a></li>
         <li><a href="#">关于我们</a></li>
         <li><router-link to="/login">请先登录</router-link></li>
-        <!-- <li><a href="#">退出登录</a></li> -->
       </ul>
-    </div>
   </div>
 </template>
 
@@ -15,15 +12,14 @@
 .app-topnav {
   height: 50px;
   line-height: 50px;
-  background: #333;
+  background: #000;
   ul {
     display: flex;
     justify-content: flex-end;
   }
   a {
     padding: 0 15px;
-    color: #cdcdcd;
-
+    color: #fff;
     &:hover {
       color: #2cad9b;
     }

@@ -2,7 +2,6 @@
 import { useRouter } from "vue-router"
 import type { FormInstance, FormRules } from "element-plus"
 import { Ilogoin } from "@/type"
-
 const router = useRouter()
 const ruleFormRef = ref<FormInstance>()
 const rules = reactive<FormRules<typeof form>>({
@@ -13,20 +12,23 @@ const form = reactive<Ilogoin>({
   username: "",
   password: ""
 })
+const getRoutes = () => {
+  if (form.username == "admin") {
+    router.addRoute({
+      path: "/demo1",
+      name: "demo1",
+      component: () => import("../RouterDemo/demo1.vue")
+    })
+  } else {
+    router.removeRoute("demo1")
+  }
+}
 
 const onSubmit = (formEl: FormInstance | undefined) => {
   if (!formEl) return false
   formEl.validate(valid => {
     if (!valid) return false
-    if (form.username == "admin") {
-      router.addRoute({
-        path: "/demo1",
-        name: "demo1",
-        component: () => import("../RouterDemo/demo1.vue")
-      })
-    } else {
-      router.removeRoute("demo1")
-    }
+    getRoutes()
     router.replace("/")
   })
 }
@@ -36,7 +38,7 @@ const onSubmit = (formEl: FormInstance | undefined) => {
   <div class="login-container">
     <el-card class="box-card">
       <template #header>
-        <div class="card-header">Vue3+Ts+Vite</div>
+        <div class="card-header">后台系统</div>
       </template>
       <el-form :model="form" ref="ruleFormRef" :rules="rules" size="large" label-width="50px">
         <el-form-item label="账号" prop="username">
@@ -53,7 +55,10 @@ const onSubmit = (formEl: FormInstance | undefined) => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
+.el-input--large .el-input__wrapper {
+  padding: 0;
+}
 .login-container {
   background-image: url("@/assets/images/login-bg.webp");
   background-size: cover;

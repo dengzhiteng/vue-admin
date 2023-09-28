@@ -43,13 +43,3 @@ export const uesThrottle: Directive = {
     })
   }
 }
-
-// 只能输入正整数
-
-// 只能输入数字 含小数点
-
-// 电话
-
-// 邮箱
-
-// 拷贝

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Banner from "./components/Banner.vue"
 onMounted(async () => {})
 </script>
 <template>
-  <Banner />
+
+  11
 </template>
 <style scoped lang="scss">
 .box {
