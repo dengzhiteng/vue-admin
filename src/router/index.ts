@@ -31,8 +31,8 @@ const whiteRoutes =
 
 const routes = [
   {
-    path: "/",
     component: Layout,
+    path: "/",
     alias: "/index",
     meta: {
       title: "首页"
@@ -44,7 +44,30 @@ const routes = [
         meta: {
           title: "首页"
         }
+      }
+    ]
+  },
+  {
+    component: Layout,
+    path: "/dashboard",
+    meta: {
+      title: "仪表盘"
+    },
+    children: [
+      {
+        path: "/workbench",
+        component: () => import("@/views/Home/index.vue"),
+        meta: {
+          title: "工作台"
+        }
       },
+      {
+        path: "/analysis",
+        component: () => import("@/views/Home/index.vue"),
+        meta: {
+          title: "分析"
+        }
+      }
     ]
   },
   {
