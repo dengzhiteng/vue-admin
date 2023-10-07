@@ -1,71 +1,59 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 import Layout from "@/views/Layout/index.vue"
 
-const whiteRoutes =
-  [
-    {
-      path: "/login",
-      component: () => import("@/views/Login/index.vue")
-    },
-    {
-      path: "/errorPage/:type",
-      component: () => import("@/views/ErrorPage/index.vue")
-    }
-  ] 
-  // 仪表盘
-  // dashboard / workbench
-  // dashboard/analysis
-
-// 组件
-// 页面
-// 权限控制
-// 系统管理
-// 编辑器
-// 图标
-// 多级菜单
-// 示例
-// 关于
-
-
-
-
+const whiteRoutes = [
+  {
+    path: "/login",
+    component: () => import("@/views/Login/index.vue")
+  },
+  {
+    path: "/errorPage/:type",
+    component: () => import("@/views/ErrorPage/index.vue")
+  }
+]
 const routes = [
   {
     component: Layout,
-    path: "/",
-    alias: "/index",
+    path: "/workbench",
     meta: {
-      title: "首页"
+      title: "仪表盘"
     },
     children: [
       {
-        path: "/",
-        component: () => import("@/views/Home/index.vue"),
+        path: "workbench",
+        component: () => import("@/views/Home/workbench/index.vue"),
         meta: {
-          title: "首页"
+          title: "工作台"
+        }
+      },
+      {
+        path: "analysis",
+        component: () => import("@/views/Home/analysis/index.vue"),
+        meta: {
+          title: "分析"
         }
       }
     ]
   },
   {
     component: Layout,
-    path: "/dashboard",
+    path: "/features",
     meta: {
-      title: "仪表盘"
+      title: "功能"
     },
     children: [
       {
-        path: "/workbench",
-        component: () => import("@/views/Home/index.vue"),
+        path: "download",
+        component: () => import("@/views/features/download/index.vue"),
         meta: {
-          title: "工作台"
+          title: "下载"
         }
       },
       {
-        path: "/analysis",
-        component: () => import("@/views/Home/index.vue"),
+        path: "previewPdf",
+        component: () => import("@/views/features/previewPdf/index.vue"),
         meta: {
-          title: "分析"
+          title: "预览PDF"
         }
       }
     ]

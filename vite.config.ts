@@ -1,8 +1,9 @@
 import {defineConfig, loadEnv} from "vite"
-import vue from "@vitejs/plugin-vue"
 import {resolve} from "path"
-import autoprefixer from "autoprefixer"
-import {createHtmlPlugin} from "vite-plugin-html"
+import { createHtmlPlugin } from "vite-plugin-html"
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
+import vue from '@vitejs/plugin-vue'
 
 // elementPlus按需导入
 import AutoImport from "unplugin-auto-import/vite"
@@ -15,18 +16,18 @@ const getViteEnv = (mode: any, target: any) => {
 
 export default () =>
   defineConfig({
-    base: "./",
+    base: './',
     plugins: [
       vue(),
       AutoImport({
         resolvers: [ElementPlusResolver()],
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
-        imports: ["vue"]
+        imports: ['vue']
       }),
       Components({
         resolvers: [
           // 1. 配置elementPlus采用sass样式配色系统
-          ElementPlusResolver({importStyle: "sass"})
+          ElementPlusResolver({ importStyle: 'sass' })
         ]
       }),
       createHtmlPlugin({
@@ -42,29 +43,24 @@ export default () =>
         }
       },
       postcss: {
-        plugins: [
-          autoprefixer({
-            overrideBrowserslist: ["Android 4.1", "iOS 7.1", "Chrome > 31", "ff > 31", "ie >= 8", "> 1%"],
-            grid: true
-          })
-        ]
+        plugins: [tailwindcss, autoprefixer]
       }
     },
     server: {
       port: 9090,
-      host: "0.0.0.0",
+      host: '0.0.0.0',
       hmr: true,
       proxy: {
-        "/api/": {
-          target: "/api/",
+        '/api/': {
+          target: '/api/',
           changeOrigin: true,
-          rewrite: p => p.replace(/^\/api/, "")
+          rewrite: (p:any) => p.replace(/^\/api/, '')
         }
       }
     },
     resolve: {
       alias: {
-        "@": resolve(__dirname, "./src")
+        '@': resolve(__dirname, './src')
       }
     }
   })

@@ -16,14 +16,12 @@ body {
   overflow: auto;
 }
 
-.container {
-  width: 1240px;
-  margin: 0 auto;
-}
-
 a {
   text-decoration: none;
 }
 i {
   font-style: normal;
 }
+
+
+

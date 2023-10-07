@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import AppTopnav from "./components/AppTopnav.vue"
-import AppMenu from "./components/AppMenu.vue"
+import TopNav from "./components/TopNav.vue"
+import SlideMenu from "./components/SlideMenu.vue"
 </script>
 
 <template>
   <div class="common-layout">
-    <app-topnav />
+    <top-nav />
     <el-container class="content">
       <el-aside width="200px">
-          <app-menu />
+        <slide-menu />
       </el-aside>
       <el-main>
         <router-view />
@@ -20,10 +20,7 @@ import AppMenu from "./components/AppMenu.vue"
 
 <style scoped lang="scss">
 .content {
-  min-height: calc(100vh - 50px - 23px);
+  min-height: calc(100vh - 50px);
   background-color: #f1f1f1;
 }
 </style>
-
-
-

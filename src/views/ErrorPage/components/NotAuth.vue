@@ -26,7 +26,7 @@ const onBack = path => {
     <p class="title-desc">抱歉,您没有权限</p>
     <p class="btn">
       <el-button size="large" @click="onBack()">立即返回 {{ second }}s</el-button>
-      <el-button type="primary" size="large" @click="onBack('/')">跳转到首页</el-button>
+      <el-button type="primary" size="large" @click="onBack('/workbench')">跳转到首页</el-button>
     </p>
   </div>
 </template>

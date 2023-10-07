@@ -12,18 +12,8 @@ const form = reactive<Ilogoin>({
   username: "",
   password: ""
 })
-const getRoutes = () => {
-  if (form.username == "admin") {
-    router.addRoute({
-      path: "/demo1",
-      name: "demo1",
-      component: () => import("../RouterDemo/demo1.vue")
-    })
-  } else {
-    router.removeRoute("demo1")
-  }
-}
-
+const getRoutes = () => { }
+const { VITE_APP_TITLE,VITE_APP_VERSION } = import.meta.env
 const onSubmit = (formEl: FormInstance | undefined) => {
   if (!formEl) return false
   formEl.validate(valid => {
@@ -35,10 +25,10 @@ const onSubmit = (formEl: FormInstance | undefined) => {
 </script>
 
 <template>
-  <div class="login-container">
+  <div class="login-container flex justify-center items-center bg-cover bg-center">
     <el-card class="box-card">
       <template #header>
-        <div class="card-header">后台系统</div>
+        <div class=" text-center">{{VITE_APP_TITLE}}</div>
       </template>
       <el-form :model="form" ref="ruleFormRef" :rules="rules" size="large" label-width="50px">
         <el-form-item label="账号" prop="username">
@@ -47,35 +37,24 @@ const onSubmit = (formEl: FormInstance | undefined) => {
         <el-form-item label="密码" prop="password">
           <el-input v-model="form.password" placeholder="请输入密码" type="password" clearable />
         </el-form-item>
-        <el-form-item label="">
-          <el-button type="primary" class="el-button-block" size="large" @click="onSubmit(ruleFormRef)">登录</el-button>
+        <el-form-item class="login-btn-box justify-center">
+              <el-button type="primary" size="large" @click="onSubmit(ruleFormRef)" class="login-btn">登录</el-button>
         </el-form-item>
       </el-form>
     </el-card>
   </div>
+  <p class="version text-center text-white bg-black pt-2 pb-2">version：{{VITE_APP_VERSION}}</p>
 </template>
 
-<style lang="scss">
-.el-input--large .el-input__wrapper {
-  padding: 0;
-}
+<style scoped  lang="scss">
 .login-container {
   background-image: url("@/assets/images/login-bg.webp");
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: calc(100vh - 37px);
 }
 .box-card {
   width: 400px;
 }
-.card-header {
-  text-align: center;
-}
 .login-btn-box {
-  justify-content: center;
   .login-btn {
     width: 100%;
   }
