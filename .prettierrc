@@ -4,6 +4,8 @@
   "useTabs": false,
   "singleQuote": false,
   "semi": false,
+  "wrapAttributes": false,
+  "sortAttributes": false,
   "trailingComma": "none",
   "arrowParens": "avoid",
   "endOfLine": "lf",

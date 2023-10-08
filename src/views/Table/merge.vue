@@ -1,5 +1,5 @@
 <script lang="ts" setup></script>
 <template>
-  <view>22222</view>
+  <div>mrege</div>
 </template>
 <style scoped lang="scss"></style>

@@ -1,16 +1,18 @@
 <script setup lang="ts">
-import TopNav from "./components/TopNav.vue"
-import SlideMenu from "./components/SlideMenu.vue"
+import TopBar from "./components/TopBar.vue"
+import SlideBar from "./components/SlideBar.vue"
+import TabsBar from "./components/TabsBar.vue"
 </script>
 
 <template>
   <div class="common-layout">
-    <top-nav />
+    <top-bar />
     <el-container class="content">
       <el-aside width="200px">
-        <slide-menu />
+        <slide-bar />
       </el-aside>
       <el-main>
+        <tabs-bar />
         <router-view />
       </el-main>
     </el-container>

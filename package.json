@@ -15,6 +15,7 @@
     "axios": "^1.4.0",
     "element-plus": "^2.2.28",
     "pinia": "^2.1.6",
+    "pinia-plugin-persistedstate": "^3.2.0",
     "reset-css": "^5.0.2",
     "utilsdzt": "^1.0.2",
     "vue": "^3.2.47",
