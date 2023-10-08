@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import TopBar from "./components/TopBar.vue"
+import HeaderBar from "./components/header/index.vue"
 import SlideBar from "./components/SlideBar.vue"
 import TabsBar from "./components/TabsBar.vue"
 </script>
 
 <template>
   <div class="common-layout">
-    <top-bar />
+    <header-bar />
     <el-container class="content">
       <el-aside width="200px">
         <slide-bar />
