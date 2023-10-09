@@ -1,25 +1,26 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router"
 import type { FormInstance, FormRules } from "element-plus"
-import { Ilogoin } from "@/type"
+import { Login } from "@/type"
+import { useUserStore } from "@/store/user"
 const router = useRouter()
+const userStore = useUserStore()
 const ruleFormRef = ref<FormInstance>()
 const rules = reactive<FormRules<typeof form>>({
   username: [{ required: true, message: "账号不能为空", trigger: "blur" }],
   password: [{ required: true, message: "密码不能为空", trigger: "blur" }]
 })
-const form = reactive<Ilogoin>({
+const form = reactive<Login>({
   username: "",
   password: ""
 })
-const getRoutes = () => {}
 const { VITE_APP_TITLE, VITE_APP_VERSION } = import.meta.env
 const onSubmit = (formEl: FormInstance | undefined) => {
   if (!formEl) return false
   formEl.validate(valid => {
     if (!valid) return false
-    getRoutes()
-    router.replace("/")
+    userStore.userLogin(form)
+    router.push("/")
   })
 }
 </script>

@@ -1,10 +1,13 @@
 import Layout from "@/views/Layout/index.vue"
+import { RoleEnum } from "@/enums/roleEnum"
 import { Promotion, DataAnalysis, FolderAdd } from "@element-plus/icons-vue"
+
 export const asyncRoutes = [
   {
     meta: {
       title: "仪表盘",
-      icon: DataAnalysis
+      icon: DataAnalysis,
+      roles: [RoleEnum.SUPER]
     },
     path: "/",
     component: Layout,
@@ -28,7 +31,8 @@ export const asyncRoutes = [
   {
     meta: {
       title: "功能",
-      icon: FolderAdd
+      icon: FolderAdd,
+      roles: [RoleEnum.USER]
     },
     path: "/features",
     component: Layout,
@@ -52,7 +56,8 @@ export const asyncRoutes = [
   {
     meta: {
       title: "表格",
-      icon: Promotion
+      icon: Promotion,
+      roles: [RoleEnum.USER]
     },
     path: "/table",
     component: Layout,

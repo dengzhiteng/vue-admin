@@ -2,13 +2,15 @@
 import HeaderBar from "./components/header/index.vue"
 import SlideBar from "./components/SlideBar.vue"
 import TabsBar from "./components/TabsBar.vue"
+import { useSidebarStore } from "@/store/sidebar"
+const sidebarStore = useSidebarStore()
 </script>
 
 <template>
   <div class="common-layout">
     <header-bar />
     <el-container class="content">
-      <el-aside width="200px">
+      <el-aside :style="sidebarStore.isCollapse ? 'width:64px' : 'width:200px'">
         <slide-bar />
       </el-aside>
       <el-main>

@@ -1,30 +1,40 @@
 import { defineStore } from "pinia"
-import { IuserInfo } from "@/type"
-import { useRouter } from "vue-router"
-
+import type { UserInfo } from "@/type"
+import { asyncRoutes } from "@/router/asyncRoutes"
+import { loginApi } from "@/apis/user"
 export const useUserStore = defineStore(
-  "userInfo",
+  "user",
   () => {
-    const userInfo = ref<IuserInfo>({ age: 1, username: "张三", sex: "男" })
-    return { userInfo }
-  },
-  {
-    persist: true
-  }
-)
+    const userInfo = ref()
+    const routes = ref()
+    const role = ref("admin")
 
-export const useLoginOutStore = defineStore(
-  "loginOut",
-  () => {
-    const loginOut = () => {
-      const router = useRouter()
-      console.log(router)
-
-      setTimeout(() => {
-        // router.push("/login")
-      }, 200)
+    // 设置用户信息
+    const setUserInfo = info => {
+      userInfo.value = info
     }
-    return { loginOut }
+    // 获取动态路由
+    function setAsyncRoutes(data) {
+      routes.value = data
+    }
+    // 登录
+    const userLogin = async param => {
+      // const res = await loginApi({
+      //   username: param.username,
+      //   password: param.password
+      // })
+      // res.userid && setUserInfo(res)
+    }
+    // 登出
+    const userLoginOut = () => {
+      userInfo.value = {
+        role: "",
+        username: "",
+        age: 0,
+        sex: ""
+      }
+    }
+    return { userInfo, role, routes, setUserInfo, userLogin, userLoginOut, setAsyncRoutes }
   },
   {
     persist: true

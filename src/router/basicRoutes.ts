@@ -1,4 +1,4 @@
-export const basicRoutes = [
+const basicRoutes = [
   {
     path: "/login",
     component: () => import("@/views/Login/index.vue")
@@ -12,3 +12,4 @@ export const basicRoutes = [
     redirect: "/index"
   }
 ]
+export default basicRoutes

@@ -1,28 +1,30 @@
 <script setup lang="ts">
-const isCollapse = ref(false)
-import { asyncRoutes } from "@/router/asyncRoutes"
 import { useRoute } from "vue-router"
+import { useSidebarStore } from "@/store/sidebar"
+import { useUserStore } from "@/store/user"
 const route = useRoute()
+const userStore = useUserStore()
+const sidebarStore = useSidebarStore()
 </script>
 <template>
-  <div class="menu">
+  <div class="menu" :style="sidebarStore.isCollapse ? 'width:64px' : 'width:200px'">
     <el-menu
       router
       unique-opened
       class="el-menu-vertical"
-      :collapse="isCollapse"
-      background-color="#333"
+      :collapse="sidebarStore.isCollapse"
+      background-color="#000"
       text-color="#fff"
       :default-active="route.path"
     >
-      <el-sub-menu v-for="route in asyncRoutes" :index="route.path">
+      <el-sub-menu v-for="routes in userStore.routes" :index="routes.path">
         <template #title>
           <el-icon>
-            <component :is="route.meta.icon" />
+            <component :is="routes.meta.icon" />
           </el-icon>
-          <span>{{ route.meta.title }}</span>
+          <span>{{ routes.meta.title }}</span>
         </template>
-        <el-menu-item-group v-for="routeItem in route.children">
+        <el-menu-item-group v-for="routeItem in routes.children">
           <el-menu-item :index="routeItem.path">{{ routeItem.meta.title }}</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
@@ -35,8 +37,10 @@ const route = useRoute()
   background: #000;
   height: calc(100vh - 50px);
 }
+.el-menu {
+  border: 0;
+}
 .el-menu-vertical:not(.el-menu--collapse) {
-  width: 200px;
   height: calc(100vh - 50px);
 }
 </style>

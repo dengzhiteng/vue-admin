@@ -2,12 +2,15 @@ import "reset-css"
 import "animate.css"
 import "@/assets/style/tailwind.css" // tailwind.css 一定要在 App.vue 引入前引入,否则会导致样式冲突
 import "@/assets/style/main.css"
-import App from "./App.vue"
 import { createApp } from "vue"
+import App from "@/App.vue"
+import router from "@/router"
 import { createPinia } from "pinia"
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate"
-import { router } from "./router"
 import { useFocus, useDebounce, uesThrottle } from "./directives/index"
+// 路由权限控制
+import "@/router/permission"
+
 const app = createApp(App)
 const directives: any = {
   focus: useFocus,
@@ -18,7 +21,7 @@ Object.keys(directives).forEach(key => {
   app.directive(key, directives[key])
 })
 const pinia = createPinia()
-app.use(router)
 app.use(pinia)
 pinia.use(piniaPluginPersistedstate)
+app.use(router)
 app.mount("#app")

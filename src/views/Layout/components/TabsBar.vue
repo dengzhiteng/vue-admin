@@ -49,7 +49,7 @@ const openContext = (e: Event, index: number) => {
   currentIndex.value = index
   contextmenuPositon.value = {
     top: top - 38,
-    left: left + e?.target?.clientWidth - (sidebarStore.collapse ? 64 : 200) - 84
+    left: left + e?.target?.clientWidth - (sidebarStore?.collapse ? 64 : 200) - 84
   }
 }
 const onClickOutside = () => {

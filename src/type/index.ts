@@ -1,28 +1,12 @@
-export interface Ilogoin {
+export interface Login {
   username: string
   password: string
 }
 
-export interface IuserInfo {
+export interface UserInfo {
   username: string
   age: number
   sex: string
-}
-
-export interface IuserList {
-  username: string
-  age: number
-  sex: string
-  phone?: string | number
-  [propName: string]: any
-}
-
-export interface IgoodsList {
-  id: string
-  goodsName: string
-  price: number
-  stock: number
-  desc?: string
-  img?: string
+  role: string
   [propName: string]: any
 }
