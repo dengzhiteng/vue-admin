@@ -1,18 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router"
-import basicRoutes from "./basicRoutes"
+import basicRoutes from "./whiteRoutes"
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: [
-    ...basicRoutes,
-    {
-      path: "/:catchAll(.*)",
-      redirect: "/errorPage/404",
-      meta: {
-        title: "404"
-      }
-    }
-  ],
+  routes: [...basicRoutes],
   scrollBehavior(to, from, savedPosition) {
     return savedPosition ? savedPosition : { top: 0 }
   }

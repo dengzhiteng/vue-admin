@@ -6,25 +6,25 @@ export const asyncRoutes = [
   {
     meta: {
       title: "仪表盘",
-      icon: DataAnalysis,
-      roles: [RoleEnum.SUPER]
+      icon: DataAnalysis
     },
     path: "/",
     component: Layout,
     children: [
       {
-        path: "/index",
-        component: () => import("@/views/Home/workbench/index.vue"),
         meta: {
           title: "工作台"
-        }
+        },
+        path: "/",
+        component: () => import("@/views/Home/workbench/index.vue")
       },
       {
-        path: "/analysis",
-        component: () => import("@/views/Home/analysis/index.vue"),
         meta: {
-          title: "分析"
-        }
+          title: "分析",
+          roles: [RoleEnum.SUPER]
+        },
+        path: "analysis",
+        component: () => import("@/views/Home/analysis/index.vue")
       }
     ]
   },
@@ -38,18 +38,35 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
-        path: "/download",
-        component: () => import("@/views/features/download/index.vue"),
         meta: {
           title: "下载"
-        }
+        },
+        path: "download",
+        component: () => import("@/views/features/download/index.vue")
       },
       {
-        path: "/previewPdf",
-        component: () => import("@/views/features/previewPdf/index.vue"),
         meta: {
           title: "预览PDF"
-        }
+        },
+        path: "previewPdf",
+        component: () => import("@/views/features/previewPdf/index.vue")
+      },
+      {
+        meta: {
+          title: "打印",
+          icon: DataAnalysis
+        },
+        path: "print",
+        component: () => import("@/views/features/print/index.vue"),
+        children: [
+          {
+            meta: {
+              title: "水印"
+            },
+            path: "watermark",
+            component: () => import("@/views/features/watermark/index.vue")
+          }
+        ]
       }
     ]
   },
@@ -63,18 +80,18 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
-        path: "/list",
-        component: () => import("@/views/Table/merge.vue"),
         meta: {
           title: "普通表格"
-        }
+        },
+        path: "list",
+        component: () => import("@/views/Table/merge.vue")
       },
       {
-        path: "/merge",
-        component: () => import("@/views/Table/list.vue"),
         meta: {
           title: "表格合并"
-        }
+        },
+        path: "merge",
+        component: () => import("@/views/Table/list.vue")
       }
     ]
   }

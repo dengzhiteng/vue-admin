@@ -10,8 +10,8 @@ import piniaPluginPersistedstate from "pinia-plugin-persistedstate"
 import { useFocus, useDebounce, uesThrottle } from "./directives/index"
 // 路由权限控制
 import "@/router/permission"
-
 const app = createApp(App)
+const pinia = createPinia()
 const directives: any = {
   focus: useFocus,
   debounce: useDebounce,
@@ -20,8 +20,5 @@ const directives: any = {
 Object.keys(directives).forEach(key => {
   app.directive(key, directives[key])
 })
-const pinia = createPinia()
-app.use(pinia)
+app.use(pinia).use(router).mount("#app")
 pinia.use(piniaPluginPersistedstate)
-app.use(router)
-app.mount("#app")

@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter, useRoute } from "vue-router"
-const second = toRef(50)
+const second = toRef(60)
 const router = useRouter()
 const route = useRoute()
 const timeer = setInterval(() => {
@@ -12,11 +12,7 @@ const timeer = setInterval(() => {
   }
 }, 1000)
 const onBack = path => {
-  if (path) {
-    router.replace({ path: path })
-  } else {
-    router.back()
-  }
+  path ? router.replace({ path: path }) : router.back()
 }
 </script>
 
@@ -25,7 +21,9 @@ const onBack = path => {
     <p class="title">403</p>
     <p class="title-desc">抱歉,您没有权限</p>
     <p class="btn">
-      <el-button size="large" @click="onBack()">立即返回 {{ second }}s</el-button>
+      <el-button size="large" @click="onBack()"
+        >立即返回 <span v-if="second">{{ second }}s </span></el-button
+      >
       <el-button type="primary" size="large" @click="onBack('/')">跳转到首页</el-button>
     </p>
   </div>

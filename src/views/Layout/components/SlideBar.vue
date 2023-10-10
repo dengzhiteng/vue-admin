@@ -25,7 +25,9 @@ const sidebarStore = useSidebarStore()
           <span>{{ routes.meta.title }}</span>
         </template>
         <el-menu-item-group v-for="routeItem in routes.children">
-          <el-menu-item :index="routeItem.path">{{ routeItem.meta.title }}</el-menu-item>
+          <el-menu-item :index="routeItem.path">
+            {{ routeItem.meta.title }}
+          </el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
     </el-menu>

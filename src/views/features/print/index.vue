@@ -1,5 +1,5 @@
 <script lang="ts" setup></script>
 <template>
-  <view>下载</view>
+  <div>打印</div>
 </template>
 <style scoped lang="scss"></style>

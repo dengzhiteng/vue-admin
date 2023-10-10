@@ -1,8 +1,9 @@
 import router from "@/router"
-// 路由白名单
-import whiteList from "@/router/basicRoutes"
+import { cloneDeep } from "lodash"
+import whiteList from "@/router/whiteRoutes"
 import { useUserStore } from "@/store/user"
 import { addAsyncRoutes } from "@/utils/permission"
+import { asyncRoutes } from "@/router/asyncRoutes"
 
 router.beforeEach(async (to, from) => {
   const useUser = useUserStore()
@@ -14,13 +15,12 @@ router.beforeEach(async (to, from) => {
     } else {
       // 动态挂载路由
       if (!to.redirectedFrom) {
-        await addAsyncRoutes(router)
+        await addAsyncRoutes(router, cloneDeep(asyncRoutes))
         return { ...to, replace: true }
       } else return true
     }
   }
   // 白名单，直接放行 非白名单，去登录
   const index = whiteList.findIndex(item => item.path === to.path)
-  console.log(index, to.path)
   return index > -1 ? true : "/login"
 })

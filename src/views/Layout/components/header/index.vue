@@ -11,7 +11,7 @@ const userStore = useUserStore()
 const { VITE_APP_TITLE } = import.meta.env
 const onCommand = (command: string) => {
   if (command === "loginout") {
-    userStore.loginOut()
+    userStore.userLoginOut()
     router.push("/login")
   }
   if (command === "profile") {

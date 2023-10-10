@@ -3,8 +3,11 @@ import { useRouter } from "vue-router"
 import type { FormInstance, FormRules } from "element-plus"
 import { Login } from "@/type"
 import { useUserStore } from "@/store/user"
+import { useTagsStore } from "@/store/tags"
 const router = useRouter()
 const userStore = useUserStore()
+const tagsStore = useTagsStore()
+const { VITE_APP_TITLE, VITE_APP_VERSION } = import.meta.env
 const ruleFormRef = ref<FormInstance>()
 const rules = reactive<FormRules<typeof form>>({
   username: [{ required: true, message: "账号不能为空", trigger: "blur" }],
@@ -14,13 +17,14 @@ const form = reactive<Login>({
   username: "",
   password: ""
 })
-const { VITE_APP_TITLE, VITE_APP_VERSION } = import.meta.env
+// 清空tag
+tagsStore.clearTags()
 const onSubmit = (formEl: FormInstance | undefined) => {
   if (!formEl) return false
   formEl.validate(valid => {
     if (!valid) return false
     userStore.userLogin(form)
-    router.push("/")
+    router.replace("/")
   })
 }
 </script>

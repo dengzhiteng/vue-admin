@@ -1,3 +1,4 @@
+// 路由白名单
 const basicRoutes = [
   {
     path: "/login",
@@ -6,10 +7,6 @@ const basicRoutes = [
   {
     path: "/errorPage/:type",
     component: () => import("@/views/ErrorPage/index.vue")
-  },
-  {
-    path: "/",
-    redirect: "/index"
   }
 ]
 export default basicRoutes
