@@ -57,16 +57,14 @@ export const asyncRoutes = [
           icon: DataAnalysis
         },
         path: "print",
-        component: () => import("@/views/features/print/index.vue"),
-        children: [
-          {
-            meta: {
-              title: "水印"
-            },
-            path: "watermark",
-            component: () => import("@/views/features/watermark/index.vue")
-          }
-        ]
+        component: () => import("@/views/features/print/index.vue")
+      },
+      {
+        meta: {
+          title: "水印"
+        },
+        path: "watermark",
+        component: () => import("@/views/features/watermark/index.vue")
       }
     ]
   },
@@ -84,14 +82,14 @@ export const asyncRoutes = [
           title: "普通表格"
         },
         path: "list",
-        component: () => import("@/views/Table/merge.vue")
+        component: () => import("@/views/Table/list.vue")
       },
       {
         meta: {
           title: "表格合并"
         },
         path: "merge",
-        component: () => import("@/views/Table/list.vue")
+        component: () => import("@/views/Table/merge.vue")
       }
     ]
   }

@@ -12,6 +12,7 @@ import { useFocus, useDebounce, uesThrottle } from "./directives/index"
 import "@/router/permission"
 const app = createApp(App)
 const pinia = createPinia()
+// 自定义指令
 const directives: any = {
   focus: useFocus,
   debounce: useDebounce,
@@ -20,5 +21,9 @@ const directives: any = {
 Object.keys(directives).forEach(key => {
   app.directive(key, directives[key])
 })
+// 全局组件注册
+import TableList from "@/components/TableList.vue"
+app.component("TableList", TableList)
+//....
 app.use(pinia).use(router).mount("#app")
 pinia.use(piniaPluginPersistedstate)

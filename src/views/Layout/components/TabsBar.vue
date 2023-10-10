@@ -116,7 +116,7 @@ const closeAll = async () => {
 
 <style lang="scss">
 .el-main {
-  padding: 0;
+  padding: 10px;
 }
 .el-tag:first-child {
   margin-left: 0;

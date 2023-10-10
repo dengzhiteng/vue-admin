@@ -15,7 +15,9 @@ const sidebarStore = useSidebarStore()
       </el-aside>
       <el-main>
         <tabs-bar />
-        <router-view />
+        <div class="mt-2">
+          <router-view />
+        </div>
       </el-main>
     </el-container>
     <app-footer />
