@@ -12,7 +12,7 @@ export async function addAsyncRoutes(router, routerList) {
       return false
     }
   }
-  const filterFunc = (routes: RouteRecordRaw[], path) => {
+  const filterFunc = (routes: RouteRecordRaw[], path?: string) => {
     const arr = routes.filter(filterRoute)
     arr.forEach(element => {
       if (path && path !== "/") {
