@@ -1,6 +1,5 @@
-<script setup>
-</script>
+<script setup></script>
 <template>
-  <div></div>
+  <div>111</div>
 </template>
 <style scoped lang="scss"></style>

@@ -13,6 +13,7 @@ const columns = [
     label: "地址"
   },
   {
+    label: "操作",
     slot: "operate"
   }
 ]
@@ -40,7 +41,11 @@ const tableData = [
 ]
 </script>
 <template>
-  <table-list :tableData="tableData" :columns="columns" :border="false">
-    <el-table-column label="操作" slot="operate"></el-table-column>
-  </table-list>
+  <my-table :tableData="tableData" :columns="columns">
+    <template v-slot:operate>
+      <el-table-column label="操作" prop="operate">
+        <el-button type="danger" plain size="small">删除</el-button>
+      </el-table-column>
+    </template>
+  </my-table>
 </template>

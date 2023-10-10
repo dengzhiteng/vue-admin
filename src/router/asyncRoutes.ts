@@ -31,8 +31,7 @@ export const asyncRoutes = [
   {
     meta: {
       title: "功能",
-      icon: FolderAdd,
-      roles: [RoleEnum.USER]
+      icon: FolderAdd
     },
     path: "/features",
     component: Layout,
@@ -71,8 +70,7 @@ export const asyncRoutes = [
   {
     meta: {
       title: "表格",
-      icon: Promotion,
-      roles: [RoleEnum.USER]
+      icon: Promotion
     },
     path: "/table",
     component: Layout,
@@ -90,6 +88,40 @@ export const asyncRoutes = [
         },
         path: "merge",
         component: () => import("@/views/Table/merge.vue")
+      }
+    ]
+  },
+  {
+    meta: {
+      title: "表单",
+      icon: Promotion
+    },
+    path: "/form",
+    component: Layout,
+    children: [
+      {
+        meta: {
+          title: "普通表单"
+        },
+        path: "list",
+        component: () => import("@/views/Form/list.vue")
+      }
+    ]
+  },
+  {
+    meta: {
+      title: "Echart",
+      icon: Promotion
+    },
+    path: "/echart",
+    component: Layout,
+    children: [
+      {
+        meta: {
+          title: "图表"
+        },
+        path: "list",
+        component: () => import("@/views/Echart/index.vue")
       }
     ]
   }

@@ -23,7 +23,9 @@ Object.keys(directives).forEach(key => {
 })
 // 全局组件注册
 import TableList from "@/components/TableList.vue"
-app.component("TableList", TableList)
+import Form from "@/components/Form.vue"
+app.component("MyTable", TableList)
+app.component("MyForm", Form)
 //....
 app.use(pinia).use(router).mount("#app")
 pinia.use(piniaPluginPersistedstate)
