@@ -37,11 +37,31 @@ const tableData = [
     date: "2016-05-01",
     name: "Tom",
     address: "No. 189, Grove St, Los Angeles"
+  },
+  {
+    date: "2016-05-03",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles"
+  },
+  {
+    date: "2016-05-02",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles"
+  },
+  {
+    date: "2016-05-04",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles"
+  },
+  {
+    date: "2016-05-01",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles"
   }
 ]
 </script>
 <template>
-  <my-table :tableData="tableData" :columns="columns">
+  <my-table :tableData="tableData" :columns="columns" fielName="前端导出普通表格">
     <template v-slot:operate>
       <el-table-column label="操作" prop="operate">
         <el-button type="danger" plain size="small">删除</el-button>
